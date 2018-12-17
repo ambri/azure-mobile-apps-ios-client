@@ -117,7 +117,7 @@ onPushCompleteWithError:(nullable NSError *)error
  */
 -(nullable NSDictionary *) readTable:(nonnull NSString *)table
                           withItemId:(nonnull NSString *)itemId
-                             orError:(NSError * __nullable * __nullable)error;
+                             orError:(NSError * __nullable * __nullable)error NS_SWIFT_NOTHROW;
 
 /**
  Should insert or update the given item(s) in the local store as appropriate
