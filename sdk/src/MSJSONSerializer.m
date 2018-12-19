@@ -137,7 +137,7 @@ static NSArray<NSString *> *allIdKeys;
         // Then get the value of the id key, which must be present or else
         // it is an error.
         itemId = [item objectForKey:idKey];
-        if (!itemId) {
+        if (!itemId || [(NSString *)itemId length] == 0) {
             localError = [self errorForMissingItemId];
         }
         else if (![itemId isKindOfClass:[NSNumber class]] &&
