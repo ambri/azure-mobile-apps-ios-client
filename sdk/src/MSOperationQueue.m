@@ -129,9 +129,14 @@
         return;
     }
     
-    [self.dataSource deleteItemsWithIds:[NSArray arrayWithObject:[NSNumber numberWithInteger:operation.operationId]]
+//    [self.dataSource deleteItemsWithIds:[NSArray arrayWithObject:[NSNumber numberWithInteger:operation.operationId]]
+//                                  table:[self.dataSource operationTableName]
+//                                orError:error];
+
+    [self.dataSource deleteItemsWithIds:[NSArray arrayWithObject:[NSNumber numberWithInteger:operation.operationId].stringValue]
                                   table:[self.dataSource operationTableName]
                                 orError:error];
+
     if (error && *error) {
         return;
     }
