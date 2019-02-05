@@ -146,7 +146,7 @@
     self.view = self.loginView;
 }
 
--(void) viewDidUnload
+- (void) dealloc
 {
     self.loginView = nil;
 }
