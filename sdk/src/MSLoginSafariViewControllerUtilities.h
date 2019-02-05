@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
  login URL, identity provider name, custom URL scheme,
  login parameters, code verifier and code challenge method
 
- @param loginURL
+ @param loginURL Url of the login
  @param provider The identity provider
  @param urlScheme The url scheme
  @param parameters NSDictionary representation of extra login parameters
@@ -31,8 +31,8 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  Determine if redirect URL for |MSSafariViewController| resumeWithURL is valid
 
- @param URL
- @param urlScheme
+ @param URL URL
+ @param urlScheme URL scheme
  @return YES if URL is valid, NO otherwise
  */
 + (BOOL)isRedirectURLValid:(NSURL *)URL withUrlScheme:(NSString *)urlScheme;
@@ -41,7 +41,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  Extract authorization_code from redirect URL
 
- @param URL
+ @param URL URL
  @return authorization_code
  */
 + (NSString *)authorizationCodeFromRedirectURL:(NSURL *)URL;
@@ -52,7 +52,7 @@ NS_ASSUME_NONNULL_BEGIN
  from application URL, identity provider name, authorization code
  and code verifier
 
- @param applicationURL
+ @param applicationURL URL of the application
  @param provider The identity provider
  @param authorizationCode to be used in code exchange
  @param codeVerifier to be used in Proof Key for Code Exchange protocol of OAuth 2.0
