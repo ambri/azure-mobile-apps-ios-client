@@ -191,7 +191,7 @@
             
             [result.items enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
                 if (self.queryId) {
-                    if ((NSDate *)obj[MSSystemColumnUpdatedAt] == nil) {
+                    if ((NSDate *)obj[MSSystemColumnUpdatedAt] != nil) {
                         self.maxDate = [self.maxDate laterDate:(NSDate *)obj[MSSystemColumnUpdatedAt]];
                     } else {
                         self.maxDate = [NSDate dateWithTimeIntervalSince1970: 1];
