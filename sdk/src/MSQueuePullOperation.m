@@ -191,10 +191,10 @@
             
             [result.items enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
                 if (self.queryId) {
-                    if ([obj[MSSystemColumnUpdatedAt] isKindOfClass:[NSNull class]] != nil) {
-                        self.maxDate = [self.maxDate laterDate:(NSDate *)obj[MSSystemColumnUpdatedAt]];
-                    } else {
+                    if ([obj[MSSystemColumnUpdatedAt] isKindOfClass:[NSNull class]]) {
                         self.maxDate = [NSDate dateWithTimeIntervalSince1970: 1];
+                    } else {
+                        self.maxDate = [self.maxDate laterDate:(NSDate *)obj[MSSystemColumnUpdatedAt]];
                     }
                 }
                 BOOL isDeleted = NO;
